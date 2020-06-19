@@ -23,10 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         val userManager = (application as MyApplication).userManager
 
-
-
-
-
         mainViewModel = MainViewModel(userManager.userDataRepository!!)
         setupViews()
     }
