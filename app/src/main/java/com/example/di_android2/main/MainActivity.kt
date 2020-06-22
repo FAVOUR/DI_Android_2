@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val userManager = (application as MyApplication).userManager
 
-        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
+//        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
 
         if(!userManager.isUserLoggedIn()) {
-            Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
+//            Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
 
               if (!userManager.isUserRegistered()){
-                  Log.i("Main Activity ", "Here if !userManager.isUserLoggedIn()")
+//                  Log.i("Main Activity ", "Here if !userManager.isUserLoggedIn()")
 
                   var intent  = Intent(this,RegistrationActivity::class.java)
                          startActivity(intent)
