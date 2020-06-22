@@ -24,18 +24,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val userManager = (application as MyApplication).userManager
 
-        if(userManager.isUserLoggedIn()) {
+        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
+
+        if(!userManager.isUserLoggedIn()) {
+            Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
 
               if (!userManager.isUserRegistered()){
+                  Log.i("Main Activity ", "Here if !userManager.isUserLoggedIn()")
 
                   var intent  = Intent(this,RegistrationActivity::class.java)
                          startActivity(intent)
+                         finish()  //if finish is not called the onresume() method will be called
 
               }else{
 
               }
 
         }else {
+            Log.i("Main Activity ", "Here else of !userManager.isUserLoggedIn()")
+
             setContentView(R.layout.activity_main)
             Log.i("userManager", Gson().toJson(userManager.userDataRepository))
 
