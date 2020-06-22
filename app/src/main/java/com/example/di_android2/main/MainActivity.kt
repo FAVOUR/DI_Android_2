@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.di_android2.MyApplication
 import com.example.di_android2.R
+import com.example.di_android2.registration.RegistrationActivity
 import com.google.gson.Gson
 
 
@@ -23,12 +24,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val userManager = (application as MyApplication).userManager
 
-        setContentView(R.layout.activity_main)
+        if(userManager.isUserLoggedIn()) {
 
+              if (!userManager.isUserRegistered()){
 
-         Log.i("userManager", Gson().toJson(userManager.userDataRepository))
-        mainViewModel = MainViewModel(userManager.userDataRepository!!)
-        setupViews()
+                  var intent  = Intent(this,RegistrationActivity::class.java)
+                         startActivity(intent)
+
+              }else{
+
+              }
+
+        }else {
+            setContentView(R.layout.activity_main)
+            Log.i("userManager", Gson().toJson(userManager.userDataRepository))
+
+            mainViewModel = MainViewModel(userManager.userDataRepository!!)
+            setupViews()
+        }
     }
 
 
@@ -38,7 +51,7 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onResume() {
         super.onResume()
-//        findViewById<TextView>(R.id.notifications).text = mainViewModel.notificationsText
+        findViewById<TextView>(R.id.notifications).text = mainViewModel.notificationsText
     }
 
     private fun setupViews() {
