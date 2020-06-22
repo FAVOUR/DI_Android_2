@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
               if (!userManager.isUserRegistered()){
 //                  Log.i("Main Activity ", "Here if !userManager.isUserLoggedIn()")
+                  Log.i("Main Activity userManager", Gson().toJson(userManager.userDataRepository))
 
                   var intent  = Intent(this,RegistrationActivity::class.java)
                          startActivity(intent)
