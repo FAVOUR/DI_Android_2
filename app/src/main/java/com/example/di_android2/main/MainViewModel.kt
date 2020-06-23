@@ -6,10 +6,10 @@ import com.google.gson.Gson
 
 class MainViewModel(private val userDataRepository: UserDataRepository?) {
 
-init {
-    Log.i("userManager", Gson().toJson(userDataRepository))
-
-}
+//init {
+//    Log.i("userManager", Gson().toJson(userDataRepository))
+//
+//}
     val welcomeText: String
         get() = "Hello ${userDataRepository!!.username}!"
 
