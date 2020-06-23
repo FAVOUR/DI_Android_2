@@ -22,8 +22,6 @@ class UserManagerTest {
         userManager= UserManager(storage)
     }
 
-
-
         @Test
       fun `username Returns what is in storage`(){
           assertEquals("",userManager.username)
@@ -42,41 +40,66 @@ class UserManagerTest {
 
           assertTrue(userManager.isUserRegistered())
 //          assertThat(userManager.isUserRegistered(), `is`(equals(true)))
+    }
 
 
+    @Test
+    fun `is User LoggedIn`(){
+        assertFalse(userManager.isUserLoggedIn())
+
+        userManager.registerUser("Username","Password")
+
+        assertTrue(userManager.isUserLoggedIn())
+    }
 
 
+    @Test
+    fun `Register user adds username and password to the storage`() {
+        assertFalse(userManager.isUserRegistered())
+        assertFalse(userManager.isUserLoggedIn())
+
+        userManager.registerUser("username", "password")
+
+        assertTrue(userManager.isUserRegistered())
+        assertTrue(userManager.isUserLoggedIn())
+        assertEquals("username", storage.getString("registered_user"))
+        assertEquals("password", storage.getString("usernamepassword"))
     }
 
     @Test
-    fun getUsername() {
+    fun `Login succeeds when username is registered and password is correct`() {
+        userManager.registerUser("username", "password")
+        userManager.logout()
+
+        assertTrue(userManager.loginUser("username", "password"))
+        assertTrue(userManager.isUserLoggedIn())
     }
 
     @Test
-    fun isUserLoggedIn() {
+    fun `Login fails when username is not registered`() {
+        userManager.registerUser("username", "password")
+        userManager.logout()
+
+        assertFalse(userManager.loginUser("username2", "password"))
+        assertFalse(userManager.isUserLoggedIn())
     }
 
     @Test
-    fun isUserRegistered() {
+    fun `Login fails when username is registered but password is incorrect`() {
+        userManager.registerUser("username", "password")
+        userManager.logout()
+
+        assertFalse(userManager.loginUser("username", "password2"))
+        assertFalse(userManager.isUserLoggedIn())
     }
 
     @Test
-    fun registerUser() {
-    }
+    fun `Unregister behaves as expected`() {
+        userManager.registerUser("username", "password")
+        assertTrue(userManager.isUserLoggedIn())
 
-    @Test
-    fun loginUser() {
-    }
-
-    @Test
-    fun logout() {
-    }
-
-    @Test
-    fun unregister() {
-    }
-
-    @Test
-    fun getStorage() {
+        userManager.unregister()
+        assertFalse(userManager.isUserLoggedIn())
+        assertFalse(userManager.isUserRegistered())
     }
 }

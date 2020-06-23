@@ -1,6 +1,5 @@
 package com.example.di_android2.user
 
-import com.example.di_android2.storage.SharedPreference
 import com.example.di_android2.storage.Storage
 
 
