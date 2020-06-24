@@ -11,10 +11,10 @@ class RegistrationViewModel(val userManager: UserManager) {
     private var  acceptTC:Boolean? =null
 
 
-    init {
-        Log.i("userManager", Gson().toJson(userManager.userDataRepository))
-
-    }
+//    init {
+//        Log.i("userManager", Gson().toJson(userManager.userDataRepository))
+//
+//    }
     fun updateUser(username:String,password:String){
         this.username= username
         this.password= password

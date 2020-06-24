@@ -5,7 +5,6 @@ import org.hamcrest.core.Is.`is`
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mock
 import org.mockito.Mockito.`when` as whenever
 import org.mockito.Mockito.mock
 
