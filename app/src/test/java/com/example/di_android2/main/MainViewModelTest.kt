@@ -1,7 +1,6 @@
 package com.example.di_android2.main
 
 import com.example.di_android2.user.UserDataRepository
-import com.example.di_android2.user.UserManager
 import org.hamcrest.core.Is.`is`
 import org.junit.Assert.*
 import org.junit.Before

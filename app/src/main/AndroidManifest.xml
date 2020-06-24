@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.di_android2">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.di_android2"
+    tools:ignore="GoogleAppIndexingWarning">
 
     <application
         android:name=".MyApplication"
