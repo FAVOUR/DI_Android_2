@@ -13,3 +13,4 @@ class SettingViewmodel (val userManager: UserManager,val userDataRepository: Use
         userManager.logout()
     }
 }
+
