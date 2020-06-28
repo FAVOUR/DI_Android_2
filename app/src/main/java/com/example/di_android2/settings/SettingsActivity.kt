@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.di_android2.MyApplication
 import com.example.di_android2.R
+import com.example.di_android2.login.LoginActivity
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.logout).setOnClickListener {
             settingsViewmodel.logout()
-            val intent =Intent(this,LoginActivity::class.java)
+            val intent =Intent(this, LoginActivity::class.java)
               intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or
                               Intent.FLAG_ACTIVITY_CLEAR_TASK or
                               Intent.FLAG_ACTIVITY_NEW_TASK
