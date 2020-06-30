@@ -4,9 +4,9 @@ import android.app.Application
 import com.example.di_android2.storage.SharedPreference
 import com.example.di_android2.user.UserManager
 
-class MyApplication :Application(){
+open class MyApplication :Application(){
 
-   val userManager by lazy {
+   open val userManager by lazy {
           UserManager(SharedPreference(applicationContext))
    }
 
