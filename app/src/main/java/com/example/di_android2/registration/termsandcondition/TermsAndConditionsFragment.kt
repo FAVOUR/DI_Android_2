@@ -26,7 +26,8 @@ class TermsAndConditionsFragment : Fragment() {
             (activity as RegistrationActivity).onTermsAndConditionAccepted()
         }
 
-        return view    }
+        return view
+    }
 
 
 }
