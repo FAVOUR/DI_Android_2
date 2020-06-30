@@ -28,11 +28,13 @@ class SettingViewmodelTest{
 
     @Test
     fun `refresh Notification Works As Expected`(){
-//       `when`(viewmodel.userDataRepository.unreadNotifications).thenReturn(3)
         viewmodel.refreshNotification()
 //
-        verify(viewmodel).refreshNotification()
-//        assertThat(viewmodel.userDataRepository.unreadNotifications,`is`( equalTo(19)))
+        verify(userDataRepository).refreshUnreadNotifications()
+
+        `when`(viewmodel.userDataRepository.unreadNotifications).thenReturn(3)
+
+        assertThat(viewmodel.userDataRepository.unreadNotifications,`is`( equalTo(3)))
 
 
     }
