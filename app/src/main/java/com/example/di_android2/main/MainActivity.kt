@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.di_android2.MyApplication
 import com.example.di_android2.R
+import com.example.di_android2.login.LoginActivity
 import com.example.di_android2.registration.RegistrationActivity
+import com.example.di_android2.settings.SettingsActivity
 import com.google.gson.Gson
 
 
@@ -39,7 +41,8 @@ class MainActivity : AppCompatActivity() {
 
               }else{
 
-
+                  startActivity(Intent(this, LoginActivity::class.java))
+                  finish()
 
               }
 
@@ -65,9 +68,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-//        findViewById<TextView>(R.id.hello).text = mainViewModel.welcomeText
+        findViewById<TextView>(R.id.hello).text = mainViewModel.welcomeText
         findViewById<Button>(R.id.settings).setOnClickListener {
-//            startActivity(Intent(this, SettingsActivity::class.java))
+            startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
 }
