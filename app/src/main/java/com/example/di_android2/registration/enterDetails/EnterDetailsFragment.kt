@@ -30,7 +30,11 @@ class EnterDetailsFragment : Fragment() {
 
 
             registrationViewModel= (activity as RegistrationActivity).registrationViewModel
-            enterDetailsViewModel.enterDetailsState.observe(this, Observer <EnterDetailsViewState>{state->
+
+        enterDetailsViewModel = EnterDetailsViewmodel()
+
+
+        enterDetailsViewModel.enterDetailsState.observe(this, Observer <EnterDetailsViewState>{state->
                 when(state){
 
                     is EnterDetailsViewState ->{
