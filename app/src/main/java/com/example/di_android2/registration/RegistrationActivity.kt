@@ -11,7 +11,7 @@ import com.example.di_android2.registration.termsandcondition.TermsAndConditions
 
 class RegistrationActivity : AppCompatActivity() {
 
-     private lateinit var registrationViewModel: RegistrationViewModel
+      lateinit var registrationViewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,23 +24,27 @@ class RegistrationActivity : AppCompatActivity() {
              .commit()
 
 
-        fun detailedFragment(){
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_holder,TermsAndConditionsFragment())
-                .addToBackStack(TermsAndConditionsFragment()::class.java.simpleName)
-                .commit()
-        }
 
-
-        fun onTermsAndConditionAccepted(){
-            registrationViewModel.registerUser()
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
-        }
 
 
 
     }
+
+    fun onDetailsEntered(){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_holder,TermsAndConditionsFragment())
+            .addToBackStack(TermsAndConditionsFragment()::class.java.simpleName)
+            .commit()
+    }
+
+    fun onTermsAndConditionAccepted(){
+        registrationViewModel.registerUser()
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
+    }
+
+
+
 
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount > 0){
