@@ -1,8 +1,9 @@
 package com.example.di_android2.storage
 
 import android.content.Context
+import javax.inject.Inject
 
-class SharedPreference(context:Context):Storage {
+class SharedPreference @Inject constructor(context:Context):Storage {
 
     val sharedPreference =  context.getSharedPreferences("Dagger",Context.MODE_PRIVATE)
 
