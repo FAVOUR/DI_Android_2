@@ -16,6 +16,10 @@ class RegistrationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        (application as MyApplication).appComponent.inject(this)
+
+
         setContentView(R.layout.activity_registration)
 
 //        registrationViewModel= RegistrationViewModel((application as MyApplication).userManager)
