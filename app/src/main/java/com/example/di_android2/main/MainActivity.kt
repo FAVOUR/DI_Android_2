@@ -14,7 +14,6 @@ import com.example.di_android2.settings.SettingsActivity
 import com.google.gson.Gson
 
 
-private lateinit var mainViewModel: MainViewModel
 
 /**
  * If the User is not registered, RegistrationActivity will be launched,
@@ -22,8 +21,13 @@ private lateinit var mainViewModel: MainViewModel
  * else carry on with MainActivity
  */
 class MainActivity : AppCompatActivity() {
+    private lateinit var mainViewModel: MainViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         val userManager = (application as MyApplication).userManager
 
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
