@@ -1,6 +1,7 @@
 package com.example.di_android2.user
 
 import com.example.di_android2.storage.Storage
+import javax.inject.Inject
 
 
 private const val REGISTERED_USER = "registered_user"
@@ -11,7 +12,7 @@ private const val PASSWORD_SUFFIX = "password"
  * Knows when the user is logged in.
  */
 
-class UserManager(val storage: Storage) {
+class UserManager @Inject constructor(val storage: Storage) {
 
         /**
          *  UserDataRepository is specific to a logged in user. This determines if the user

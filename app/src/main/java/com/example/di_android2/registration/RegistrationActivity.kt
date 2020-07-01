@@ -8,16 +8,17 @@ import com.example.di_android2.R
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.registration.enterDetails.EnterDetailsFragment
 import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
+import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
-
+      @Inject
       lateinit var registrationViewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        registrationViewModel= RegistrationViewModel((application as MyApplication).userManager)
+//        registrationViewModel= RegistrationViewModel((application as MyApplication).userManager)
 
          supportFragmentManager.beginTransaction()
              .add(R.id.fragment_holder,EnterDetailsFragment() )

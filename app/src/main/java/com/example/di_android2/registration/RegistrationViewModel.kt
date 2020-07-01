@@ -3,8 +3,9 @@ package com.example.di_android2.registration
 import android.util.Log
 import com.example.di_android2.user.UserManager
 import com.google.gson.Gson
+import javax.inject.Inject
 
-class RegistrationViewModel(val userManager: UserManager) {
+class RegistrationViewModel @Inject constructor(val userManager: UserManager) {
 
     private var username:String? =null
     private var  password:String? =null
