@@ -11,10 +11,10 @@ open class MyApplication :Application(){
           UserManager(SharedPreference(applicationContext))
    }
 
-      val  appComponent by lazy {
-
-        DaggerAppComponent.factory().create(this)
-    }
+//      val  appComponent by lazy {
+//
+//        DaggerAppComponent.factory().create(this)
+//    }
 
 
 

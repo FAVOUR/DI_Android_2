@@ -12,7 +12,8 @@ private const val PASSWORD_SUFFIX = "password"
  * Knows when the user is logged in.
  */
 
-class UserManager @Inject constructor(val storage: Storage) {
+//class UserManager @Inject constructor(val storage: Storage) {
+class UserManager  constructor(val storage: Storage) {
 
         /**
          *  UserDataRepository is specific to a logged in user. This determines if the user

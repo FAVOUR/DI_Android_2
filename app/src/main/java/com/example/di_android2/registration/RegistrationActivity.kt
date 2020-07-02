@@ -11,26 +11,22 @@ import com.example.di_android2.registration.termsandcondition.TermsAndConditions
 import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
-      @Inject
+//      @Inject
       lateinit var registrationViewModel: RegistrationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        (application as MyApplication).appComponent.inject(this)
+//        (application as MyApplication).appComponent.inject(this)
 
 
         setContentView(R.layout.activity_registration)
 
-//        registrationViewModel= RegistrationViewModel((application as MyApplication).userManager)
+        registrationViewModel= RegistrationViewModel((application as MyApplication).userManager)
 
          supportFragmentManager.beginTransaction()
              .add(R.id.fragment_holder,EnterDetailsFragment() )
              .commit()
-
-
-
-
 
 
     }

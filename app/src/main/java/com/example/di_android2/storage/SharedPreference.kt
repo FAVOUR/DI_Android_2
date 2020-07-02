@@ -3,7 +3,8 @@ package com.example.di_android2.storage
 import android.content.Context
 import javax.inject.Inject
 
-class SharedPreference @Inject constructor(context:Context):Storage {
+//class SharedPreference @Inject constructor(context:Context):Storage {
+class SharedPreference  constructor(context:Context):Storage {
 
     val sharedPreference =  context.getSharedPreferences("Dagger",Context.MODE_PRIVATE)
 
