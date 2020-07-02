@@ -12,7 +12,7 @@ import com.example.di_android2.login.LoginActivity
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.settings.SettingsActivity
 import com.google.gson.Gson
-
+import javax.inject.Inject
 
 
 /**
@@ -21,7 +21,7 @@ import com.google.gson.Gson
  * else carry on with MainActivity
  */
 class MainActivity : AppCompatActivity() {
-    private lateinit var mainViewModel: MainViewModel
+    lateinit var mainViewModel: MainViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

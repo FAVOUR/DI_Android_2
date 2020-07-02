@@ -11,8 +11,7 @@ import com.example.di_android2.login.LoginActivity
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var  settingsViewmodel: SettingViewmodel
-
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
