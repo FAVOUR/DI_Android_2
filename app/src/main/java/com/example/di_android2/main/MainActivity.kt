@@ -11,6 +11,7 @@ import com.example.di_android2.R
 import com.example.di_android2.login.LoginActivity
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.settings.SettingsActivity
+import com.example.di_android2.user.UserManager
 import com.google.gson.Gson
 import javax.inject.Inject
 
@@ -21,14 +22,20 @@ import javax.inject.Inject
  * else carry on with MainActivity
  */
 class MainActivity : AppCompatActivity() {
+    @Inject
     lateinit var mainViewModel: MainViewModel
+
+    @Inject
+    lateinit var userManager: UserManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
 
 
-        val userManager = (application as MyApplication).userManager
+//        val userManager = (application as MyApplication).userManager
 
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
 
