@@ -17,6 +17,7 @@
 package com.example.di_android2.user
 
 import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.random.Random
 
 /**
