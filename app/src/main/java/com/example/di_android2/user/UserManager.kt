@@ -16,7 +16,6 @@ private const val PASSWORD_SUFFIX = "password"
 
 class UserManager @Inject constructor(val storage: Storage) {
 
-
         /**
          *  UserDataRepository is specific to a logged in user. This determines if the user
          *  is logged in or not, when the user logs in, a new instance will be created.

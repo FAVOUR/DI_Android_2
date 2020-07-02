@@ -34,9 +34,6 @@ class MainActivity : AppCompatActivity() {
         (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
 
-
-//        val userManager = (application as MyApplication).userManager
-
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
 
         if(!userManager.isUserLoggedIn()) {
