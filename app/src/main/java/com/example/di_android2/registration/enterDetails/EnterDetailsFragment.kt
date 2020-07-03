@@ -1,5 +1,6 @@
 package com.example.di_android2.registration.enterDetails
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +11,18 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
+import com.example.di_android2.MyApplication
 import com.example.di_android2.R
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.RegistrationViewModel
+import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
+import javax.inject.Inject
 
 class EnterDetailsFragment : Fragment() {
 
-    private lateinit var registrationViewModel: RegistrationViewModel
+    @Inject
+    lateinit var registrationViewModel: RegistrationViewModel
+    @Inject
     private lateinit var enterDetailsViewModel: EnterDetailsViewmodel
 
     private lateinit var errorTextView: TextView
@@ -29,9 +35,9 @@ class EnterDetailsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_enter_details, container, false)
 
 
-            registrationViewModel= (activity as RegistrationActivity).registrationViewModel
+//            registrationViewModel= (activity as RegistrationActivity).registrationViewModel
 
-        enterDetailsViewModel = EnterDetailsViewmodel()
+//        enterDetailsViewModel = EnterDetailsViewmodel()
 
 
         enterDetailsViewModel.enterDetailsState.observe(this, Observer <EnterDetailsViewState>{state->
@@ -72,6 +78,12 @@ class EnterDetailsFragment : Fragment() {
             val password = passwordEditText.text.toString()
             enterDetailsViewModel.valideteInput(username, password)
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().applicationContext as MyApplication).appComponent.inject(EnterDetailsFragment())
+
     }
 
 

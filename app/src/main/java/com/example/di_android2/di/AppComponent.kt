@@ -3,6 +3,8 @@ package com.example.di_android2.di
 import android.content.Context
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.registration.RegistrationActivity
+import com.example.di_android2.registration.enterDetails.EnterDetailsFragment
+import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -13,6 +15,8 @@ interface AppComponent {
 
   //classes that can be injected by this component
     fun inject(registrationActivity:RegistrationActivity)
+    fun inject(enterDetailsActivity:EnterDetailsFragment)
+    fun inject(termsAndConditionsFragment:TermsAndConditionsFragment)
     fun inject(mainActivity:MainActivity)
 
       @Component.Factory
