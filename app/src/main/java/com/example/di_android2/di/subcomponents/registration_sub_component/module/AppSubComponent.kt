@@ -6,6 +6,4 @@ import dagger.Module
 
 @Module(subcomponents = [RegistrationSubComponent::class])
 class AppSubComponent {
-
-
 }

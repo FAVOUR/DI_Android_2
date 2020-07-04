@@ -83,7 +83,7 @@ class EnterDetailsFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (requireActivity().applicationContext as MyApplication).appComponent.inject(this)
+        (activity as RegistrationActivity).registrationComponent.inject(enterDetailsActivity = this)
 
     }
 

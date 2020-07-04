@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.di_android2.MyApplication
 import com.example.di_android2.R
+import com.example.di_android2.di.subcomponents.registration_sub_component.RegistrationSubComponent
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.RegistrationViewModel
 import javax.inject.Inject
@@ -35,12 +36,16 @@ class TermsAndConditionsFragment : Fragment() {
         return view
     }
 
+    lateinit var registrationComponent : RegistrationSubComponent
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (requireActivity().applicationContext as MyApplication).appComponent.inject(
+        (requireActivity().application as MyApplication).appComponent.registrationComponent().create()
+            .inject(
             this
         )
+
+        (activity as RegistrationActivity).registrationComponent.inject(termsAndConditionsFragment = this)
     }
 
 

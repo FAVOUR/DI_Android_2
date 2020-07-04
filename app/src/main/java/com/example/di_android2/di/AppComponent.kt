@@ -14,12 +14,14 @@ interface AppComponent {
 
   //classes that can be injected by this component
 
-    fun inject(mainActivity:MainActivity)
 
       @Component.Factory
       interface Factory {
         fun create(@BindsInstance context: Context):AppComponent
       }
 
-      fun create():RegistrationSubComponent.Factory
+      fun registrationComponent():RegistrationSubComponent.Factory
+
+  fun inject(mainActivity:MainActivity)
+
 }
