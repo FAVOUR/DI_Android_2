@@ -1,6 +1,7 @@
 package com.example.di_android2.di
 
 import android.content.Context
+import com.example.di_android2.di.subcomponents.RegistrationSubComponent.RegistrationSubComponent
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.enterDetails.EnterDetailsFragment
@@ -21,4 +22,6 @@ interface AppComponent {
       interface Factory {
         fun create(@BindsInstance context: Context):AppComponent
       }
+
+      fun create():RegistrationSubComponent.Factory
 }
