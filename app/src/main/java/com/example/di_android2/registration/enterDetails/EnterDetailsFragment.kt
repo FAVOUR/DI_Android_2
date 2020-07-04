@@ -22,8 +22,9 @@ class EnterDetailsFragment : Fragment() {
 
     @Inject
     lateinit var registrationViewModel: RegistrationViewModel
+
     @Inject
-    private lateinit var enterDetailsViewModel: EnterDetailsViewmodel
+     lateinit var enterDetailsViewModel: EnterDetailsViewmodel
 
     private lateinit var errorTextView: TextView
     private lateinit var usernameEditText: EditText
@@ -82,7 +83,7 @@ class EnterDetailsFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (requireActivity().applicationContext as MyApplication).appComponent.inject(EnterDetailsFragment())
+        (requireActivity().applicationContext as MyApplication).appComponent.inject(this)
 
     }
 

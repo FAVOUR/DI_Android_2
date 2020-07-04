@@ -11,6 +11,7 @@ import com.example.di_android2.registration.termsandcondition.TermsAndConditions
 import javax.inject.Inject
 
 class RegistrationActivity : AppCompatActivity() {
+
       @Inject
       lateinit var registrationViewModel: RegistrationViewModel
 

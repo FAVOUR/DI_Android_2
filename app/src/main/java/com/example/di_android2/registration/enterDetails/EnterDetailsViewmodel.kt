@@ -2,11 +2,12 @@ package com.example.di_android2.registration.enterDetails
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import javax.inject.Inject
 
 private const val MAX_LENGTH = 5
 
 
-class EnterDetailsViewmodel {
+class EnterDetailsViewmodel @Inject constructor() {
 
     private val  _enterDetailsState = MutableLiveData<EnterDetailsViewState>()
 
