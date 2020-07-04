@@ -14,9 +14,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
   //classes that can be injected by this component
-    fun inject(registrationActivity:RegistrationActivity)
-    fun inject(enterDetailsActivity:EnterDetailsFragment)
-    fun inject(termsAndConditionsFragment:TermsAndConditionsFragment)
+
     fun inject(mainActivity:MainActivity)
 
       @Component.Factory
