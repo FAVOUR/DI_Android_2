@@ -1,4 +1,4 @@
-package com.example.di_android2.di.subcomponents.RegistrationSubComponent
+package com.example.di_android2.di.subcomponents.registration_sub_component
 
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.enterDetails.EnterDetailsFragment

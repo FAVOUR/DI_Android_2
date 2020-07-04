@@ -1,11 +1,8 @@
 package com.example.di_android2.di
 
 import android.content.Context
-import com.example.di_android2.di.subcomponents.RegistrationSubComponent.RegistrationSubComponent
+import com.example.di_android2.di.subcomponents.registration_sub_component.RegistrationSubComponent
 import com.example.di_android2.main.MainActivity
-import com.example.di_android2.registration.RegistrationActivity
-import com.example.di_android2.registration.enterDetails.EnterDetailsFragment
-import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
