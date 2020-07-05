@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.di_android2.di.subcomponents.registration_sub_component.RegistrationSubComponent
 import com.example.di_android2.di.subcomponents.registration_sub_component.module.AppSubComponent
 import com.example.di_android2.main.MainActivity
+import com.example.di_android2.settings.SettingsActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -22,6 +23,7 @@ interface AppComponent {
 
       fun registrationComponent():RegistrationSubComponent.Factory
 
-  fun inject(mainActivity:MainActivity)
+      fun inject(mainActivity:MainActivity)
+      fun inject(settingsActivity:SettingsActivity)
 
 }

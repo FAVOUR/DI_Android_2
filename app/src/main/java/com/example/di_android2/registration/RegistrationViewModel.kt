@@ -1,10 +1,12 @@
 package com.example.di_android2.registration
 
 import android.util.Log
+import com.example.di_android2.di.annotation_processors.ActivityScope
 import com.example.di_android2.user.UserManager
 import com.google.gson.Gson
 import javax.inject.Inject
 
+@ActivityScope
 class RegistrationViewModel @Inject constructor(val userManager: UserManager) {
 
     private var username:String? =null

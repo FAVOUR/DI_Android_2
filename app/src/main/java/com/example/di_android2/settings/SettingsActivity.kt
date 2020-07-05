@@ -7,18 +7,22 @@ import android.widget.Button
 import com.example.di_android2.MyApplication
 import com.example.di_android2.R
 import com.example.di_android2.login.LoginActivity
+import javax.inject.Inject
 
 class SettingsActivity : AppCompatActivity() {
 
-    private lateinit var  settingsViewmodel: SettingViewmodel
+    @Inject
+     lateinit var  settingsViewmodel: SettingViewmodel
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        (application as MyApplication).appComponent.inject(this)
         setContentView(R.layout.activity_settings)
 
         val userManager=(application as MyApplication).userManager
 
-        settingsViewmodel = SettingViewmodel(userManager.userDataRepository!!,userManager)
+//        settingsViewmodel = SettingViewmodel(userManager.userDataRepository!!,userManager)
          setupViews()
     }
 

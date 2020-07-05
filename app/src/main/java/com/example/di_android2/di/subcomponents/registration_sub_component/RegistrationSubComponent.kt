@@ -1,10 +1,12 @@
 package com.example.di_android2.di.subcomponents.registration_sub_component
 
+import com.example.di_android2.di.annotation_processors.ActivityScope
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.enterDetails.EnterDetailsFragment
 import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
 import dagger.Subcomponent
 
+@ActivityScope
 @Subcomponent
  interface RegistrationSubComponent {
 
