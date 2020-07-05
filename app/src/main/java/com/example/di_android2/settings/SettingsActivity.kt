@@ -18,6 +18,11 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 //        (application as MyApplication).appComponent.userComponent().create().inject(this)
+        // Gets the userManager from the application graph to obtain the instance
+        // of UserComponent and gets this Activity injected
+        val userManager = (application as MyApplication).appComponent.usermanager()
+        userManager.userComponent!!.inject(this)
+
         setContentView(R.layout.activity_settings)
 
 //        val userManager=(application as MyApplication).userManager
