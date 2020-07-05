@@ -26,7 +26,6 @@ interface AppComponent {
 
       fun  loginComponent():LoginComponent.Factory
 
-      fun inject(mainActivity:MainActivity)
-      fun inject(settingsActivity:SettingsActivity)
+
 
 }
