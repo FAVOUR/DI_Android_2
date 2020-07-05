@@ -2,7 +2,8 @@ package com.example.di_android2.di
 
 import android.content.Context
 import com.example.di_android2.di.subcomponents.registration_sub_component.RegistrationSubComponent
-import com.example.di_android2.di.module.AppSubComponent
+import com.example.di_android2.di.subcomponent_module.AppSubComponent
+import com.example.di_android2.di.subcomponents.login.LoginComponent
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.settings.SettingsActivity
 import dagger.BindsInstance
@@ -22,6 +23,8 @@ interface AppComponent {
       }
 
       fun registrationComponent():RegistrationSubComponent.Factory
+
+      fun  loginComponent():LoginComponent.Factory
 
       fun inject(mainActivity:MainActivity)
       fun inject(settingsActivity:SettingsActivity)

@@ -16,19 +16,26 @@ import com.example.di_android2.main.MainActivity
 import com.example.di_android2.registration.RegistrationActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_login.*
+import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var loginViewModel: LoginViewModel
+    @Inject
+     lateinit var loginViewModel: LoginViewModel
     private lateinit var errorTextView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        (application as MyApplication).appComponent.loginComponent().create().inject(this)
         super.onCreate(savedInstanceState)
+
+
+
         setContentView(R.layout.activity_login)
 
         //Creates ViewModel and Listeners for loginState LiveData
-        loginViewModel = LoginViewModel((application as MyApplication).userManager)
+//        loginViewModel = LoginViewModel((application as MyApplication).userManager)
         loginViewModel.loginState.observe(this, Observer<LoginViewState>{ state ->
 
             Log.e("Login activity ",Gson().toJson(state))
@@ -37,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
                 is LoginViewState ->{
 
 //                    Log.e("Login activity Success",Gson().toJson(((application as MyApplication).userManager).userDataRepository?.username))
-                    Log.e("LoginActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
+//                    Log.e("LoginActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
                     Log.e("Login activity Success","Login Success")
 
 

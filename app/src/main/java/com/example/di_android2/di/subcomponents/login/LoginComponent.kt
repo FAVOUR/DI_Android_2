@@ -8,8 +8,8 @@ interface LoginComponent {
 
 
     @Subcomponent.Factory
-    interface  Factoty {
-        fun loginComponent():LoginComponent
+    interface  Factory {
+        fun  create():LoginComponent
     }
 
      fun inject(loginActivity:LoginActivity)
