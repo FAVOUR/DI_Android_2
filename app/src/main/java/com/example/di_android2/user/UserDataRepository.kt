@@ -16,8 +16,8 @@
 
 package com.example.di_android2.user
 
+import android.util.Log
 import javax.inject.Inject
-import javax.inject.Singleton
 import kotlin.random.Random
 
 /**
@@ -28,6 +28,10 @@ import kotlin.random.Random
     val username: String
         get() = userManager.username
 
+
+    init {
+        Log.i("userManager.username",userManager.username)
+    }
     var unreadNotifications: Int
 
     init {

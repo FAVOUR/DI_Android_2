@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
+        Log.e("userManager.isUserLoggedIn()",(userManager.isUserLoggedIn()).toString())
+        Log.e("MainActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
 
         if(!userManager.isUserLoggedIn()) {
 //            Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
@@ -59,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
             setContentView(R.layout.activity_main)
 //            Log.i("userManager", Gson().toJson(userManager.userDataRepository))
+
 
             mainViewModel = MainViewModel(userManager.userDataRepository!!)
             setupViews()

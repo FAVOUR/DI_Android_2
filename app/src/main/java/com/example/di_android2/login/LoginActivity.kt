@@ -3,6 +3,7 @@ package com.example.di_android2.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -13,6 +14,7 @@ import com.example.di_android2.MyApplication
 import com.example.di_android2.R
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.registration.RegistrationActivity
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -29,8 +31,16 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = LoginViewModel((application as MyApplication).userManager)
         loginViewModel.loginState.observe(this, Observer<LoginViewState>{ state ->
 
+            Log.e("Login activity ",Gson().toJson(state))
+
             when(state){
                 is LoginViewState ->{
+
+//                    Log.e("Login activity Success",Gson().toJson(((application as MyApplication).userManager).userDataRepository?.username))
+                    Log.e("LoginActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
+                    Log.e("Login activity Success","Login Success")
+
+
                     startActivity(Intent(this , MainActivity::class.java))
                      finish()
                 }

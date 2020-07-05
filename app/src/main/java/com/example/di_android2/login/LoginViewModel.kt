@@ -1,5 +1,6 @@
 package com.example.di_android2.login
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.di_android2.user.UserManager
@@ -17,8 +18,11 @@ class LoginViewModel(private val userManager: UserManager){
 
     fun login(userName: String, password: String ){
         if(userManager.loginUser(userName,password)){
+            Log.e("Success","Login Success")
             _loginState.value = LoginSuccess
         }else{
+            Log.e("Failed","Login Failed")
+
             _loginState.value =LoginError
         }
 
