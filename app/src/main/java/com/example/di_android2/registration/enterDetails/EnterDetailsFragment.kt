@@ -2,6 +2,7 @@ package com.example.di_android2.registration.enterDetails
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.di_android2.R
 import com.example.di_android2.registration.RegistrationActivity
 import com.example.di_android2.registration.RegistrationViewModel
 import com.example.di_android2.registration.termsandcondition.TermsAndConditionsFragment
+import com.google.gson.Gson
 import javax.inject.Inject
 
 class EnterDetailsFragment : Fragment() {
@@ -44,7 +46,7 @@ class EnterDetailsFragment : Fragment() {
         enterDetailsViewModel.enterDetailsState.observe(this, Observer <EnterDetailsViewState>{state->
                 when(state){
 
-                    is EnterDetailsViewState ->{
+                    is EnterDetailsSuccess ->{
                          val username = usernameEditText.text.toString()
                          val password = passwordEditText.text.toString()
 
@@ -77,6 +79,9 @@ class EnterDetailsFragment : Fragment() {
         view.findViewById<Button>(R.id.next).setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
+
+            Log.e("password.length ed ",(password.length).toString())
+//            Log.e("password.length < MAX_LENGTH ed ",(password.length < MAX_LENGTH).toString())
             enterDetailsViewModel.valideteInput(username, password)
         }
     }

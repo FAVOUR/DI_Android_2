@@ -20,7 +20,7 @@ class SettingsActivity : AppCompatActivity() {
         (application as MyApplication).appComponent.inject(this)
         setContentView(R.layout.activity_settings)
 
-        val userManager=(application as MyApplication).userManager
+//        val userManager=(application as MyApplication).userManager
 
 //        settingsViewmodel = SettingViewmodel(userManager.userDataRepository!!,userManager)
          setupViews()
