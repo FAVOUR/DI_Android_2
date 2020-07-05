@@ -7,6 +7,7 @@ import com.example.di_android2.di.subcomponents.login.LoginComponent
 import com.example.di_android2.di.subcomponents.user.UserComponent
 import com.example.di_android2.main.MainActivity
 import com.example.di_android2.settings.SettingsActivity
+import com.example.di_android2.user.UserManager
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -26,6 +27,9 @@ interface AppComponent {
       fun registrationComponent():RegistrationSubComponent.Factory
 
       fun  loginComponent():LoginComponent.Factory
+
+
+      fun usermanager():UserManager
 
 
 

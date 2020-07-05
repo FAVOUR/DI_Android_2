@@ -31,12 +31,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        (application as MyApplication).appComponent.inject(this)
+//        (application as MyApplication).appComponent.userComponent().create().inject(this)
+
+
         super.onCreate(savedInstanceState)
 
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
-        Log.e("userManager.isUserLoggedIn()",(userManager.isUserLoggedIn()).toString())
-        Log.e("MainActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
+//        Log.e("userManager.isUserLoggedIn()",(userManager.isUserLoggedIn()).toString())
+//        Log.e("MainActivity  userDataRepository",((((application as MyApplication).userManager).userDataRepository) ==null).toString())
 
         if(!userManager.isUserLoggedIn()) {
 //            Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 //            Log.i("userManager", Gson().toJson(userManager.userDataRepository))
 
 
-            mainViewModel = MainViewModel(userManager.userDataRepository!!)
+//            mainViewModel = MainViewModel(userManager.userDataRepository!!)
             setupViews()
         }
     }

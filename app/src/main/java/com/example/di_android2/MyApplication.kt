@@ -7,14 +7,15 @@ import com.example.di_android2.user.UserManager
 
 open class MyApplication :Application(){
 
-   open val userManager by lazy {
-          UserManager(SharedPreference(applicationContext))
-   }
+//   open val userManager by lazy {
+//          UserManager(SharedPreference(applicationContext))
+//   }
 
       val  appComponent by lazy {
 
         DaggerAppComponent.factory().create(this)
     }
+
 
 
 

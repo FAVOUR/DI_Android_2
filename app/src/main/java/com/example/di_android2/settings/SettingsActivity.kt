@@ -17,7 +17,7 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        (application as MyApplication).appComponent.inject(this)
+//        (application as MyApplication).appComponent.userComponent().create().inject(this)
         setContentView(R.layout.activity_settings)
 
 //        val userManager=(application as MyApplication).userManager
