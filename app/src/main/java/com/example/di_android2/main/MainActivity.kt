@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
 
 //        (application as MyApplication).appComponent.userComponent().create().inject(this)
 
-
+        // 2) Grab userManager from appComponent to check if the user is logged in or not
+        var userManager = (application as MyApplication).appComponent.usermanager()
         super.onCreate(savedInstanceState)
 
 //        Log.i("!userManager.isUserLoggedIn()", Gson().toJson(!userManager.isUserLoggedIn()))
@@ -63,9 +64,10 @@ class MainActivity : AppCompatActivity() {
 
             setContentView(R.layout.activity_main)
 //            Log.i("userManager", Gson().toJson(userManager.userDataRepository))
+            userManager.userComponent!!.inject(this)
 
 
-//            mainViewModel = MainViewModel(userManager.userDataRepository!!)
+//            mainViewModel = MainViewModel(userManager.userComponent!!.)
             setupViews()
         }
     }
