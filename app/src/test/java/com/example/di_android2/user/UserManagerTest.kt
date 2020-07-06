@@ -1,5 +1,6 @@
 package com.example.di_android2.user
 
+import com.example.di_android2.di.subcomponents.user.UserComponent
 import com.example.di_android2.storage.FakeStorage
 import com.example.di_android2.storage.Storage
 import org.hamcrest.CoreMatchers.`is`
@@ -9,6 +10,8 @@ import org.junit.Before
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
 
 class UserManagerTest {
 
@@ -19,7 +22,11 @@ class UserManagerTest {
     @Before
     fun setUp() {
         storage=FakeStorage()
-        userManager= UserManager(storage)
+        var  userComponentFactory: UserComponent.Factory= mock(UserComponent.Factory::class.java)
+        var usercomponent:UserComponent =mock(UserComponent::class.java)
+
+        `when`(userComponentFactory.create()).thenReturn(usercomponent)
+        userManager= UserManager(storage,userComponentFactory)
     }
 
         @Test
