@@ -26,6 +26,7 @@ class UserManagerTest {
         var usercomponent:UserComponent =mock(UserComponent::class.java)
 
         `when`(userComponentFactory.create()).thenReturn(usercomponent)
+
         userManager= UserManager(storage,userComponentFactory)
     }
 
