@@ -20,6 +20,15 @@ class ApplicationTest {
         onView(withId(R.id.username)).perform(typeText("UserName"), closeSoftKeyboard())
         onView(withId(R.id.password)).perform(typeText("Password"), closeSoftKeyboard())
         onView(withId(R.id.next)).perform(click())
+
+        //TermsAndCondition Activity
+        onView(withText("Terms and Conditions")).check(matches(isDisplayed()))
+        onView(withId(R.id.next)).perform(click())
+
+        //MainActivity
+        onView(withText("Hello UserName!")).check(matches(isDisplayed()))
+        onView(withId(R.id.settings)).perform(click())
+
     }
 
 }
