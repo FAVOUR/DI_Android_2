@@ -16,7 +16,7 @@ private const val PASSWORD_SUFFIX = "password"
  * Knows when the user is logged in.
  */
 @Singleton
-class UserManager @Inject constructor(val storage: Storage,val userComponentFactory: UserComponent.Factory) {
+class UserManager @Inject constructor(private val storage: Storage, private val userComponentFactory: UserComponent.Factory) {
 
         /**
          *  UserDataRepository is specific to a logged in user. This determines if the user
