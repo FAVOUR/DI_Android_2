@@ -7,10 +7,8 @@ import androidx.test.runner.AndroidJUnitRunner
 class MyCustomTestRunner :AndroidJUnitRunner(){
 
     override fun newApplication(
-        cl: ClassLoader?,
-        className: String?,
-        context: Context?
-    ): Application {
+        cl: ClassLoader?, className: String?, context: Context?): Application {
+
         print("MyTestApplication::class.java.simpleName ${MyTestApplication::class.java.simpleName}")
         print("MyTestApplication::class.java.canonicalName ${MyTestApplication::class.java.canonicalName}")
         print("MyTestApplication::class.simpleName ${MyTestApplication::class.simpleName}")
