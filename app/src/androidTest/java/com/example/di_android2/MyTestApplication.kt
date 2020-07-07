@@ -6,8 +6,5 @@ import com.example.di_android2.user.UserManager
 
 class MyTestApplication  :MyApplication() {
 
-//    override  val userManager by lazy {
-//        UserManager(FakeStorage())
-//
-//    }
+override
 }
