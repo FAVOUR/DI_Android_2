@@ -6,8 +6,8 @@ import org.junit.Test
 import org.junit.Assert.*
 import javax.inject.Inject
 
-//class FakeStorage @Inject constructor() :Storage{
-class FakeStorage  constructor() :Storage{
+class FakeStorage @Inject constructor() :Storage{
+//class FakeStorage  constructor() :Storage{
 
    private val map = mutableMapOf<String,String>()
 
