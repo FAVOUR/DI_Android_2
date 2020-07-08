@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.MyCustomTestRunner"
+        testInstrumentationRunner "com.example.di_android2.MyCustomTestRunner"
     }
 
     buildTypes {
@@ -27,6 +27,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 
     sourceSets {
         String sharedTestDir = 'src/sharedTest/java'

@@ -7,9 +7,9 @@ import com.example.di_android2.user.UserManager
 
 class MyTestApplication  :MyApplication() {
 
-//    override fun initializeComponent(): AppComponent {
-//
-//        Dagger.
-//
-//              }
+    override fun initializeComponent(): AppComponent {
+
+       return  DaggerTestComponent.create()
+
+              }
 }
