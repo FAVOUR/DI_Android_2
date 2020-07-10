@@ -1,0 +1,10 @@
+
+   version :  2
+       jobs:
+         build:
+           working_Directory:~/code
+           executor:
+             image:
+                run:
+                  -checkout
+                  -
