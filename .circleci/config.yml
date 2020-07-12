@@ -23,7 +23,7 @@
               name: Run test
               command: ./gradlew lint test
 
-            - `w2`: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+            - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
                   path: app/build/reports
                   destination: reports
            - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
