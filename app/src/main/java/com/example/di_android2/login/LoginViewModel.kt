@@ -19,10 +19,10 @@ class LoginViewModel @Inject constructor(private val userManager: UserManager){
 
     fun login(userName: String, password: String ){
         if(userManager.loginUser(userName,password)){
-            Log.e("Success","Login Success")
+//            Log.e("Success","Login Success")
             _loginState.value = LoginSuccess
         }else{
-            Log.e("Failed","Login Failed")
+//            Log.e("Failed","Login Failed")
 
             _loginState.value =LoginError
         }

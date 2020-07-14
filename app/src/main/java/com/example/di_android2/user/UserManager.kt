@@ -47,8 +47,8 @@ class UserManager @Inject constructor(private val storage: Storage, private val 
             if (registeredUser != username) return false
 
             val registeredPassword = storage.getString("$username$PASSWORD_SUFFIX")
-            Log.e("registeredPassword",registeredPassword)
-            Log.e("password",password)
+//            Log.e("registeredPassword",registeredPassword)
+//            Log.e("password",password)
 
             if (registeredPassword != password) return false
 
